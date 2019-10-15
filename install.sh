@@ -2,12 +2,6 @@
 mount -o remount,rw /
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
-myFile="/etc/ddns.py"
-if [ ! -e "$myFile" ]; then
-menu_install
-fi
-menu_uinstall
-
 function menu_install(){
 echo -e "  DnsPod Ddns一键安装脚本
   ---- By:方块君 ----
@@ -157,3 +151,9 @@ function Uninstall(){
 function quit(){
 	exit
 }
+
+myFile="/etc/ddns.py"
+if [ ! -e "$myFile" ]; then
+menu_install
+fi
+menu_uinstall
