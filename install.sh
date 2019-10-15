@@ -54,7 +54,7 @@ if [ -z "$cs" ];then
 else
 	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
 fi
-wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv6.py ddns.py
+wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv6.py -O ddns.py
 read -p "Id:[Id]" id
 if [ -z "$id" ];then
 	echo "id不能为空！"
@@ -96,7 +96,7 @@ read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
 function Installv4(){
-wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv4.py ddns.py
+wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv4.py -O ddns.py
 read -p "Id:[Id]" id
 if [ -z "$id" ];then
 	echo "id不能为空！"
