@@ -149,7 +149,7 @@ function Uninstall(){
 	quit
 }
 function quit(){
-	exit
+	exit 1
 }
 
 myFile="/etc/ddns.py"
