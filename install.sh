@@ -91,7 +91,8 @@ else
 fi
 cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
-echo "\nnohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
+echo "
+nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
 read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
@@ -134,7 +135,8 @@ else
 fi
 cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
-echo "\nnohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
+echo "
+nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
 read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
