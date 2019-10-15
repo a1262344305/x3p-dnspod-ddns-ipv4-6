@@ -155,5 +155,6 @@ function quit(){
 myFile="/etc/ddns.py"
 if [ ! -e "$myFile" ]; then
 menu_install
-fi
+else
 menu_uinstall
+fi
