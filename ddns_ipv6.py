@@ -11,11 +11,11 @@ import re
 
 ssl._create_default_https_context = ssl._create_unverified_context
 params = dict(
-    login_token="ID,TOKEN",  # replace with your API token, see https://support.dnspod.cn/Kb/showarticle/tsid/227/
+    login_token="loginid,logintoken",  # replace with your API token, see https://support.dnspod.cn/Kb/showarticle/tsid/227/
     format="json",
-    domain_id=23333,  # 替换成你获取的
-    record_id=23333,  # 替换成你获取的
-    sub_domain="www",  # 替换成你的二级域名
+    domain_id=rid,  # 替换成你获取的
+    record_id=puid,  # 替换成你获取的
+    sub_domain="eym",  # 替换成你的二级域名
     record_line="默认",
     record_type="AAAA",
 )
