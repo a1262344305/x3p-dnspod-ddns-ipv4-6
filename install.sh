@@ -47,12 +47,12 @@ cp /etc/nginx/onespace.conf /etc/nginx/onespace.conf.bak
 read -p "是否要绑定域名:[默认空]" cs
 read -p "ipv6端口:[默认80]" port
 if [ -z "$port" ];then
-	port = "80"
+	port=80
 fi
 if [ -z "$cs" ];then
 	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;/g" /etc/nginx/onespace.conf
 else
-	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;\r\n    server_name $port;/g" /etc/nginx/onespace.conf
+	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
 fi
 wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv6.py -O ddns.py
 read -p "Id:[Id]" id
