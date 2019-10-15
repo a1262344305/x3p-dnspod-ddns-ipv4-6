@@ -139,7 +139,7 @@ read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
 function Uninstall(){
-	pkill -９ python
+	killall python
 	rm -rf $myFile
 	cd /etc/nginx/
 	rm -rf onespace.conf
