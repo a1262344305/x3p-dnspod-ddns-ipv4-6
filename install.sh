@@ -4,9 +4,9 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 myFile="/etc/ddns.py"
 if [ ! -e "$myFile" ]; then
-menu_install
+menu_install()
 fi
-menu_uinstall
+menu_uinstall()
 
 function menu_install(){
 echo -e "  DnsPod Ddns一键安装脚本
