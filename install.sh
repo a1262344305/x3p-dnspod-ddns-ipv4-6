@@ -52,7 +52,7 @@ fi
 if [ -z "$cs" ];then
 	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;/g" /etc/nginx/onespace.conf
 else
-	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
+	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port;\r\n    ipv6only=on;\r\n    server_name $port;/g" /etc/nginx/onespace.conf
 fi
 wget -c https://raw.githubusercontent.com/Squaregentleman/x3p-dnspod-ddns-ipv4-6/master/ddns_ipv6.py -O ddns.py
 read -p "Id:[Id]" id
@@ -91,7 +91,7 @@ else
 fi
 cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
-echo "nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
+echo "\nnohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
 read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
@@ -134,7 +134,7 @@ else
 fi
 cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
-echo "nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
+echo "\nnohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
 read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
