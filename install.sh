@@ -46,7 +46,7 @@ fi
 cp /etc/nginx/onespace.conf /etc/nginx/onespace.conf.bak
 read -p "是否要绑定域名:[默认空]" cs
 read -p "ipv6端口:[默认80]" port
-if [ -z "$cs" ];then
+if [ -z "$port" ];then
 	port = "80"
 fi
 if [ -z "$cs" ];then
