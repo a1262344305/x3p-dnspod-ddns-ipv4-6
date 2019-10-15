@@ -43,7 +43,7 @@ read -p "是否为Ipv6:[yes或no]" ipv64
 if [ ipv64 == "no" ];then
 	Installv4
 fi
-cp onespace.conf onespace.conf.bak
+cp /etc/nginx/onespace.conf /etc/nginx/onespace.conf.bak
 read -p "是否要绑定域名:[默认空]" cs
 read -p "ipv6端口:[默认80]" port
 if [ -z "$cs" ];then
