@@ -69,7 +69,7 @@ if [ -z "$token" ];then
 else
 	sed -i "s/logintoken/$token/g" ddns.py
 fi
-read -p "是否要绑定域名:[默认空]" rid
+read -p "域名ID:" rid
 if [ -z "$rid" ];then
 	echo "域名ID不能为空！"
 	exit
