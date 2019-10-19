@@ -3,11 +3,11 @@ mount -o remount,rw /
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 function menu_install(){
-echo -e "  DnsPod Ddns一键安装脚本
+echo -e "  Fkj Ddns一键安装脚本
   ---- By:方块君 ----
 
-  (1) 安装 DnsPod Ddns
-  (2) 卸载 DnsPod Ddns
+  (1) 安装 Fkj Ddns
+  (2) 卸载 Fkj Ddns
   (4) 退出
  "
  numsr
@@ -17,8 +17,8 @@ function menu_uinstall(){
 echo -e "  DnsPod Ddns一键安装脚本
   ---- By:方块君 ----
 
-  (1) 安装 DnsPod Ddns(已安装)
-  (2) 卸载 DnsPod Ddns
+  (1) 安装 Fkj Ddns(已安装)
+  (2) 卸载 Fkj Ddns
   (3) 修复配置(如果ipv6无法访问请尝试修复)
   (3) 退出
  "
@@ -28,7 +28,8 @@ function numsr(){
 echo && stty erase '^H' && read -p "请输入数字 [1-4]：" num
 case "$num" in
 	1)
-	Install
+	echo -e "已安装!!!"
+	quit
 	;;
 	2)
 	Uninstall
