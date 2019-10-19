@@ -28,8 +28,7 @@ function numsr(){
 echo && stty erase '^H' && read -p "请输入数字 [1-4]：" num
 case "$num" in
 	1)
-	echo -e "已安装!!!"
-	quit
+	Install
 	;;
 	2)
 	Uninstall
