@@ -32,10 +32,30 @@ case "$num" in
 	2)
 	Uninstall
 	;;
-	2)
+	3)
+	cofxf
+	;;
+	4)
 	quit
 	;;
 esac
+}
+function cofxf(){
+	read -p "是否要绑定域名:[默认空]" cs
+	read -p "ipv6端口:[默认80]" port
+	if [ -z "$port" ];then
+	port=80
+	fi
+	cd /etc/nginx/
+	rm -rf onespace.conf
+	mv onespace.conf.bak onespace.conf
+	if [ -z "$cs" ];then
+		sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port; ipv6only=on;/g" /etc/nginx/onespace.conf
+	else
+		sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
+	fi
+	cp onespace.conf onespace.conf.bak
+	quit
 }
 function Install(){
 read -p "是否为Ipv6:[yes或no]" ipv64
