@@ -146,13 +146,6 @@ if [ -z "$puid" ];then
 else
 	sed -i "s/puid/$puid/g" ddns.py
 fi
-read -p "ipv6端口:[默认80]" puid
-if [ -z "$puid" ];then
-	echo "子域名ID不能为空！"
-	exit
-else
-	sed -i "s/puid/$puid/g" ddns.py
-fi
 cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
 echo "
