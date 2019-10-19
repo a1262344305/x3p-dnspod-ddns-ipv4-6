@@ -7,8 +7,8 @@ import socket
 import time
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-ID=aaids
-Token=aatok
+ID=loginid
+Token=logintoken
 current_ip = None
 
 
