@@ -44,7 +44,7 @@ case "$num" in
 	Install
 	;;
 	2)
-	cofxf
+	Installv4
 	;;
 	3)
 	quit
