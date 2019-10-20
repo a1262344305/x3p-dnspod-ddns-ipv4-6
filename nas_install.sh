@@ -51,7 +51,7 @@ function cofxf(){
 	rm -rf onespace.conf
 	mv onespace.conf.bak onespace.conf
 	if [ -z "$cs" ];then
-		sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port; ipv6only=on;/g" /etc/nginx/onespace.conf
+		sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port ipv6only=on;/g" /etc/nginx/onespace.conf
 	else
 		sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
 	fi
@@ -71,7 +71,7 @@ if [ -z "$port" ];then
 	port=80
 fi
 if [ -z "$cs" ];then
-	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port; ipv6only=on;/g" /etc/nginx/onespace.conf
+	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port ipv6only=on;/g" /etc/nginx/onespace.conf
 else
 	sed -i "s/listen 80;/listen 80;\r\n    listen [::]:$port ipv6only=on;\r\n    server_name $cs;/g" /etc/nginx/onespace.conf
 fi
