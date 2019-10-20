@@ -113,7 +113,8 @@ cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
 echo "
 nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
-read -p "按回车重启,不重启请按Ctrl-C" var
+/usr/sbin/nginx -s reload
+nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &
 reboot -f
 }
 function Installv4(){
@@ -150,6 +151,8 @@ cp ddns.py /etc/ddns.py
 cp /etc/init.d/rcS /etc/init.d/rcS.bak
 echo "
 nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &" >> /etc/init.d/rcS
+/usr/sbin/nginx -s reload
+nohup python /etc/ddns.py > /tmp/ddnsout.txt 2>&1 &
 read -p "按回车重启,不重启请按Ctrl-C" var
 reboot -f
 }
